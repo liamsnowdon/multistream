@@ -11,8 +11,4 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-windicss',
   ],
-
-  publicRuntimeConfig: {
-    twitchParent: process.env.TWITCH_PARENT,
-  },
 })

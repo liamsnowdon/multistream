@@ -28,13 +28,12 @@ const props = defineProps<{
   url: string
 }>()
 
-const config = useRuntimeConfig()
 const { isTwitch, isYoutube } = useStream(props.type)
 
 const iframeSrc = computed(() => {
   switch (props.type) {
     case StreamTypes.Twitch:
-      return `https://player.twitch.tv/?channel=${props.url}&parent=${config.twitchParent}` // emongg
+      return `https://player.twitch.tv/?channel=${props.url}&parent=${location.hostname}` // emongg
     case StreamTypes.Youtube:
       return `https://www.youtube.com/embed/${props.url}` // 9qTkE6P3SaQ
   }
